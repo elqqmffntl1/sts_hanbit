@@ -11,17 +11,18 @@
 </div>
 <script type="text/javascript">
 	$(function() {
+		var context = "<%=request.getContextPath()%>";
 		$('#a_member').click(function(){
-			location.href = "${context}/member.do";
+			location.href = context+"/member/main";
 		});
 		$('#a_grade').click(function(){
-			location.href = "${context}/grade.do";
+			location.href = context+"/grade/main";
 		});
 		$('#a_account').click(function(){
-			location.href = "${context}/account.do";
+			location.href = context+"/account/main";
 		});
 		$('#a_school').click(function(){
-			location.href = "${context}/global.do?page=school_info";
+			location.href = context+"/global/school_info";
 		});
 	});
 </script>

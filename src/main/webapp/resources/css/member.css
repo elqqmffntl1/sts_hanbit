@@ -5,17 +5,17 @@
 .font_bold{font-weght:bold;}
 .bg_color_yellow{background-color: yellow}
 table#member_list {
-	font-family: arial, sans-serif;
-	border-collapse: collapse;
-	width: 100%;
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
 }
 
 table#member_list td, th {
-	border: 1px solid #dddddd;
-	text-align: left;
-	padding: 8px;
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
 }
 
-tr:nth-child(even) {
-	background-color: #dddddd;
+table#member_list tr:nth-child(even) {
+    background-color: #dddddd;
 }

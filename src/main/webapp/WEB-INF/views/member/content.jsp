@@ -7,18 +7,16 @@
 	 <h1>회원관리</h1>
 	 <div style="width: 300px;margin: 0 auto;text-align: left;">
 	    <ol>
-	    	<li><a href="${context}/member.do?action=regist&page=regist">회원가입</a></li>
-	    	<li><a href="${context}/member.do?action=login&page=login">로그인</a></li>
-	    	<li><a href="${context}/member.do?action=logout&page=logout">로그아웃</a></li>
-	    	<li><a href="${context}/member.do?action=detail&page=detail">내정보보기</a></li>
-	    	<li><a href="${context}/member.do?action=move&page=update">내정보수정</a></li>
-	    	<li><a href="${context}/member.do?action=delete&page=delete">탈퇴</a></li>
-	    	<li><a href="${context}/member.do?action=list&page=list">회원목록</a></li>
-	    	<li><a href="${context}/member.do?page=find_by">검색</a></li>
-	    	<li><a href="${context}/member.do?action=count&page=count">회원수</a></li>
+	    	<li><a id="regist" href="#">회원가입</a></li>
+	    	<li><a id="login" href="#">로그인</a></li>
+	    	<li><a id="logout" href="#">로그아웃</a></li>
+	    	<li><a id="detail" href="#">내정보보기</a></li>
+	    	<li><a id="update" href="#">내정보수정</a></li>
+	    	<li><a id="delete" href="#">탈퇴</a></li>
+	    	<li><a id="list" href="#">회원목록</a></li>
+	    	<li><a id="find_by" href="#">검색</a></li>
+	    	<li><a id="count" href="#">회원수</a></li>
 	    </ol>
 	    </div>
 	    <a href="${context}/home.do"><img src="${img}/home.jpg" alt="home" style="width: 30px" /></a>
-    </div>
-    <div id="" class="memberClass">
     </div>

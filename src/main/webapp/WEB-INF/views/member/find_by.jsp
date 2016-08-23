@@ -1,8 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<jsp:include page="../global/top.jsp"/>
 <link rel="stylesheet" href="${css}/global.css" />
-<jsp:include page="../global/header.jsp"/>
-<jsp:include page="../global/navi.jsp"/>
 <div class="box">
    <h1> ID 검색 </h1>
    <form action="${context}/member.do" method="get">
@@ -24,5 +21,3 @@
     <a href="${context}/member/do"><img src="${img}/member.jpg" alt="member" style="width: 30px" /></a>
     <a href="${context}/global.do"><img src="${img}/home.jpg" alt="home" style="width: 30px" /></a>
     </div>
-<jsp:include page="../global/footer.jsp"/>
-<jsp:include page="../global/end.jsp"/>
