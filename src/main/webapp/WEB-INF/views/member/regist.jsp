@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"     pageEncoding="UTF-8"%>
 <style type="text/css">
-	span.meta{width: 200px;background-color:yellow;float: left;text-align: left}
-	div.joinDiv{border:1px dotted gray;width: 80%;margin:10px 50px 10px 50px}	
+	span.meta{width: 200px;background-color:yellow; float: left; text-align: center;}
+
 </style>
 <div class="box">
 	<form action="${context}/member.do" method="post">

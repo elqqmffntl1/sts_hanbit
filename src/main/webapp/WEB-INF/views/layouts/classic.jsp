@@ -48,11 +48,15 @@
   <script src="${js}/douglas.js"></script>
   <script src="${js}/member.js"></script>
   <script src="${js}/resig.js"></script>
+  <script src="${js}/account.js"></script>
+  <script src="${js}/grade.js"></script>
   <script>
   app.init('${context}');
   admin.init();
   douglas.init();
   member.init();
-  resig.init();
+  grade.init();
+  account.init();
+  grade2.init();
   </script>
 </html>

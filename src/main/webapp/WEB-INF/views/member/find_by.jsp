@@ -1,5 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<link rel="stylesheet" href="${css}/global.css" />
 <div class="box">
    <h1> ID 검색 </h1>
    <form action="${context}/member.do" method="get">
