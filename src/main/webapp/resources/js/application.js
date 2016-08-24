@@ -6,7 +6,18 @@ var app = (function(){
 		sessionStorage.setItem('css',context+'/resources/css');
 		sessionStorage.setItem('img',context+'/resources/img');
 		move();
-		
+		$('#global_content').addClass('box');
+		$('#global_content a').addClass('cursor');
+		$('#global_content h2').text('서비스를 이용하시려면 회원가입을 하셔야 합니다');
+		$('#global_content_a_regist')
+		.text('SIGN UP')
+		.click(function() {location.href=app.context()+'/member/regist';});
+		$('#global_content_a_login')
+		.text('LOG IN')
+		.click(function() {location.href=app.context()+'/member/login';});
+		$('#global_content_a_admin')
+		.text('ADMIN MODE')
+		.click(function() {admin.check();});
 	};
 	var context = function(){
 		return sessionStorage.getItem('context');
@@ -50,4 +61,27 @@ var app = (function(){
 		js : js,
 		css : css
 	}
+})();
+var admin = (function(){
+	var _pass;
+	var getPass = function(){return this._pass;};
+	var setPass = function(pass){this._pass=pass;};
+	return {
+		setPass : setPass,
+		getPass : getPass,
+		check : function() {
+			setPass(1);
+			var isAdmin = confirm('관리자입니까?');
+			if (!isAdmin) {
+				alert('관리자만 접근 가능합니다.');
+			} else {
+				var password = prompt('비밀번호를 입력하세요');
+				if(password == getPass()){
+					location.href = app.context()+'/global.do';
+				}else{
+					alert('비밀번호가 다릅니다');
+				} 
+			}
+		}
+	};
 })();
