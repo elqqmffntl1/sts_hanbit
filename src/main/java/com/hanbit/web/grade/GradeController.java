@@ -13,36 +13,36 @@ public class GradeController {
 	@RequestMapping("/main")
 	public String moveMain(){
 		logger.info("GradeController ! moveMain() ");
-		return "grade/content.tiles";
+		return "user:grade/content.tiles";
 	}
 	@RequestMapping("/count")
 	public String moveCount(){
 		logger.info("GradeController ! count() ");
-		return "grade/count.tiles";
+		return "public:grade/count.tiles";
 	}
 	@RequestMapping("/delete")
 	public String moveDelete(){
 		logger.info("GradeController ! delete() ");
-		return "grade/delete.tiles";
+		return "user:grade/delete.tiles";
 	}
 	@RequestMapping("/list")
 	public String moveList(){
 		logger.info("GradeController ! list() ");
-		return "grade/list.tiles";
+		return "public:grade/list.tiles";
 	}
 	@RequestMapping("/regist")
 	public String moveRegist(){
 		logger.info("GradeController ! regist() ");
-		return "grade/regist.tiles";
+		return "public:grade/regist.tiles";
 	}
 	@RequestMapping("/search")
 	public String moveSearch(){
 		logger.info("GradeController ! search() ");
-		return "grade/search.tiles";
+		return "public:grade/search.tiles";
 	}
 	@RequestMapping("/update")
 	public String moveUpdate(){
 		logger.info("GradeController ! update() ");
-		return "grade/update.tiles";
+		return "user:grade/update.tiles";
 	}
 }

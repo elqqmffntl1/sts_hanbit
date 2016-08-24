@@ -13,52 +13,52 @@ public class MemberController {
 	@RequestMapping("/main")
 	public String moveMain() {
 		logger.info("MemberController ! moveMain() ");
-		return "member/content.tiles";
+		return "user:member/content.tiles";
 	} 
 	@RequestMapping("/regist")
 	public String moveRegist() {
 		logger.info("MemberController ! regist() ");
-		return "member/regist.tiles";
+		return "public:member/regist.tiles";
 	} 
 	@RequestMapping("/login")
 	public String moveLogin() {
 		logger.info("MemberController ! login() ");
-		return "member/login.tiles";
+		return "public:member/login.tiles";
 	} 
 	@RequestMapping("/logout")
 	public String moveLogout() {
 		logger.info("MemberController ! logout() ");
-		return "member/logout.tiles";
+		return "user:member/logout.tiles";
 	} 
 	@RequestMapping("/detail")
 	public String moveDetail() {
 		logger.info("MemberController ! detail() ");
-		return "member/detail.tiles";
+		return "user:member/detail.tiles";
 	} 
 	@RequestMapping("/update")
 	public String moveUpdate() {
 		logger.info("MemberController ! update() ");
-		return "member/update.tiles";
+		return "user:member/update.tiles";
 	} 
 	@RequestMapping("/delete")
 	public String moveDelete() {
 		logger.info("MemberController ! delete() ");
-		return "member/delete.tiles";
+		return "user:member/delete.tiles";
 	} 
 	@RequestMapping("/list")
 	public String moveList() {
 		logger.info("MemberController ! list() ");
-		return "member/list.tiles";
+		return "user:member/list.tiles";
 	} 
 	@RequestMapping("/find_by")
 	public String moveFindBy() {
 		logger.info("MemberController ! find_by() ");
-		return "member/find_by.tiles";
+		return "user:member/find_by.tiles";
 	} 
 	@RequestMapping("/count")
 	public String moveCount() {
 		logger.info("MemberController ! count() ");
-		return "member/count.tiles";
+		return "user:member/count.tiles";
 	} 
 	
 }

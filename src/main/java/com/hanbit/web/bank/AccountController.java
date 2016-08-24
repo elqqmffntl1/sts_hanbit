@@ -13,47 +13,47 @@ public class AccountController {
 	@RequestMapping("/main")
 	public String moveMain(){
 		logger.info("AccountController ! moveMain() ");
-		return "account/content.tiles";
+		return "user:account/content.tiles";
 	}
 	@RequestMapping("/count")
 	public String moveCount(){
 		logger.info("AccountController ! count() ");
-		return "account/count.tiles";
+		return "public:account/count.tiles";
 	}
 	@RequestMapping("/delete")
 	public String moveDelete(){
 		logger.info("AccountController ! delete() ");
-		return "account/delete.tiles";
+		return "user:account/delete.tiles";
 	}
 	@RequestMapping("/deposit")
 	public String moveDeposit(){
 		logger.info("AccountController ! deposit() ");
-		return "account/deposit.tiles";
+		return "user:account/deposit.tiles";
 	}
 	@RequestMapping("/list")
 	public String moveList(){
 		logger.info("AccountController ! list() ");
-		return "account/list.tiles";
+		return "public:account/list.tiles";
 	}
 	@RequestMapping("/regist")
 	public String moveRegist(){
 		logger.info("AccountController ! regist() ");
-		return "account/regist.tiles";
+		return "public:account/regist.tiles";
 	}
 	@RequestMapping("/search")
 	public String moveSearch(){
 		logger.info("AccountController ! search() ");
-		return "account/search.tiles";
+		return "public:account/search.tiles";
 	}
 	@RequestMapping("/update")
 	public String moveUpdate(){
 		logger.info("AccountController ! update() ");
-		return "account/update.tiles";
+		return "user:account/update.tiles";
 	}
 	@RequestMapping("/withdraw")
 	public String moveWithdraw(){
 		logger.info("AccountController ! withdraw() ");
-		return "account/withdraw.tiles";
+		return "user:account/withdraw.tiles";
 	}
 
 }
