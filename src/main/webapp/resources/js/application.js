@@ -8,13 +8,16 @@ var app = (function(){
 		account.init();
 		kaup.init();
 		grade.init();
+		nav.init();
+		admin.init();
 	};
 	var context = function(){return session.getAttribute();};
 	var js = function(){return sessionStorage.getItem('js');};
 	var css = function(){return sessionStorage.getItem('css');};
 	var img = function(){return sessionStorage.getItem('img');};
 	var setContentView = function(){
-		$('footer').addClass('bottom');
+		$('#header_brand').attr('src' ,app.img()+'/highnoon.png').css('width','50px').css('height','50px');
+		$('#footer').addClass('bottom').addClass('footer');
 		$('#global_content').addClass('box');
 		$('#global_content a').addClass('cursor');
 		$('#global_content h2');
@@ -137,9 +140,28 @@ var admin = (function(){
 	var _pass;
 	var getPass = function(){return this._pass;};
 	var setPass = function(pass){this._pass=pass;};
+	var init = function(){onCreate();};
+	var setContentView = function(){
+		$('#member2_img').attr('src' ,app.img()+'/member2.jpg');
+		$('#grade_img').attr('src' ,app.img()+'/grade.jpg').css('height','180px');
+		$('#account_img').attr('src' ,app.img()+'/account.jpg').css('height','180px');
+		$('#admin_content h3').addClass('text_center');
+	};
+	var onCreate = function(){
+		setContentView();
+		$('#admin_nav #member_mgmt #list').click(function(){controller.move('member','list');});
+		$('#admin_nav #member_mgmt #find').click(function(){controller.move('member','find');});
+		$('#admin_nav #member_mgmt #count').click(function(){controller.move('member','count');});
+		$('#admin_nav #account_mgmt #list').click(function(){controller.move('account','list');});
+		$('#admin_nav #account_mgmt #open').click(function(){controller.move('account','open');});
+		$('#admin_nav #account_mgmt #count').click(function(){controller.move('account','count');});
+		$('#admin_nav #account_mgmt #delete').click(function(){controller.move('account','delete');});
+		$('#admin_nav #account_mgmt #find').click(function(){controller.move('account','find');});
+	};
 	return {
 		setPass : setPass,
 		getPass : getPass,
+		init : init,
 		check : function() {
 			setPass(1);
 			var isAdmin = confirm('관리자입니까?');
@@ -385,5 +407,22 @@ var util = (function() {
 		isNumber : function(value){
 			return typeof value === 'number' && isFinite(value);
 		}
+	};
+})();
+var nav = (function() {
+	var init = function(){onCreate();};
+	var setContentView = function(){
+		$('#nav ul').addClass('list_style_none').addClass('over_hidden').addClass('bg_color_black').css('margin','0').css('padding','0');
+		$('#nav li').addClass('float_left').addClass('display_inline').css('border-right','1px').css('solid','#bbb');
+		$('#nav li:last-child').addClass('border_right');
+		$('#nav li a ').addClass('display_block').addClass('color_white').addClass('text_align').addClass('text_decoration_none').css('padding','14px 16px');
+		$('#nav li a:hover:not(.active)').addClass('bg_color_green');
+		$('#nav .active').addClass('g_color_black');
+	};
+	var onCreate = function(){
+		setContentView();
+	};
+	return{
+		init:init
 	};
 })();

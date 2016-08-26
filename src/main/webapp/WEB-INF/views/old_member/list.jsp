@@ -1,10 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <div class="box">
-<div class="panel panel-default">
-  <div class="panel-heading">학생 목록</div>
-  <div class="panel-body">
-  </div>
-<table id="member_list" class="table">
+		<h1>회원목록</h1> <br> 
+		<table id="member_list">
 			<tr>
 				<th>ID</th>
 				<th>이 름</th>
@@ -24,5 +21,8 @@
 			</tr>
 			</c:forEach>
 		</table>
-</div>
+		<p>
+		<a href="${context}/member.do"><img src="${img}/member.jpg" alt="member" style="width: 30px" /></a>
+		</p>
+		<a href="${context}/global.do"><img src="${img}/home.jpg" alt="home" style="width: 30px" /></a>
 </div>

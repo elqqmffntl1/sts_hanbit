@@ -13,17 +13,17 @@ public class AccountController {
 	@RequestMapping("/main")
 	public String moveMain(){
 		logger.info("AccountController ! moveMain() ");
-		return "user:account/content.tiles";
+		return "admin:account/content.tiles";
 	}
 	@RequestMapping("/count")
 	public String moveCount(){
 		logger.info("AccountController ! count() ");
-		return "public:account/count.tiles";
+		return "admin:account/count.tiles";
 	}
 	@RequestMapping("/delete")
 	public String moveDelete(){
 		logger.info("AccountController ! delete() ");
-		return "user:account/delete.tiles";
+		return "admin:account/delete.tiles";
 	}
 	@RequestMapping("/deposit")
 	public String moveDeposit(){
@@ -33,17 +33,17 @@ public class AccountController {
 	@RequestMapping("/list")
 	public String moveList(){
 		logger.info("AccountController ! list() ");
-		return "public:account/list.tiles";
+		return "admin:account/list.tiles";
 	}
-	@RequestMapping("/regist")
-	public String moveRegist(){
-		logger.info("AccountController ! regist() ");
-		return "public:account/regist.tiles";
+	@RequestMapping("/open")
+	public String moveOpen(){
+		logger.info("AccountController ! open() ");
+		return "admin:account/open.tiles";
 	}
-	@RequestMapping("/search")
-	public String moveSearch(){
-		logger.info("AccountController ! search() ");
-		return "public:account/search.tiles";
+	@RequestMapping("/find")
+	public String moveFind(){
+		logger.info("AccountController ! find() ");
+		return "admin:account/find.tiles";
 	}
 	@RequestMapping("/update")
 	public String moveUpdate(){

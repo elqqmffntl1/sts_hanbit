@@ -48,17 +48,17 @@ public class MemberController {
 	@RequestMapping("/list")
 	public String moveList() {
 		logger.info("MemberController ! list() ");
-		return "user:member/list.tiles";
+		return "admin:member/list.tiles";
 	} 
-	@RequestMapping("/find_by")
+	@RequestMapping("/find")
 	public String moveFindBy() {
 		logger.info("MemberController ! find_by() ");
-		return "user:member/find_by.tiles";
+		return "admin:member/find_by.tiles";
 	} 
 	@RequestMapping("/count")
 	public String moveCount() {
 		logger.info("MemberController ! count() ");
-		return "user:member/count.tiles";
+		return "admin:member/count.tiles";
 	} 
 	
 }
