@@ -2,7 +2,7 @@ package com.hanbit.web.member;
 
 import java.util.List;
 
-import com.hanbit.web.subject.SubjectMember;
+import com.hanbit.web.subject.SubjectMemberVO;
 import com.hanbit.web.util.CommonService;
 
 
@@ -14,12 +14,12 @@ import com.hanbit.web.util.CommonService;
  * @story :
  */
 public interface MemberService extends CommonService{
-	public String regist(MemberBean mem);
+	public String regist(MemberVO mem);
 	public String show();
-	public void update(MemberBean stu2);
-	public String delete(MemberBean member);
-	public MemberBean findById(String findID);
-	public SubjectMember login(MemberBean member); 
-	public MemberBean getSession();
-	public void logout(MemberBean member);
+	public void update(MemberVO stu2);
+	public String delete(MemberVO member);
+	public MemberVO findById(String findID);
+	public SubjectMemberVO login(MemberVO member); 
+	public MemberVO getSession();
+	public void logout(MemberVO member);
 }

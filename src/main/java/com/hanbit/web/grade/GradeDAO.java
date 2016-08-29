@@ -38,7 +38,7 @@ public class GradeDAO {
 			return instance;
 		}
 		
-	public int insert(GradeBean grade) {
+	public int insert(GradeVO grade) {
 		int result = 0;
 		String sql = "insert into grade(seq, grade, java, sql, html, javascript, id, exam_date)"
 	+ "values(seq.nextval,?,?,?,?,?,?,?)";
@@ -59,7 +59,7 @@ public class GradeDAO {
 		}
 		return result;
 	}
-	public int update(GradeBean grade){
+	public int update(GradeVO grade){
 		int revise = 0;
 		String sql = "update grade set "+grade.getType()+" = ? where seq = ?";
 		GradeService impl = GradeServiceImpl.getInstance();
@@ -115,13 +115,13 @@ public class GradeDAO {
 		return result;
 	}
 	public List<?> list() {
-		List<GradeBean> list = new ArrayList<GradeBean>();
+		List<GradeVO> list = new ArrayList<GradeVO>();
 		String sql = "select * from grade";
 		try {
 			pstmt = con.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			while(rs.next()){
-				GradeBean bean = new GradeBean();
+				GradeVO bean = new GradeVO();
 				bean.setSeq(String.valueOf(rs.getInt("SEQ")));
 				bean.setId(rs.getString("ID"));
 				bean.setExamDate(rs.getString("EXAM_DATE"));
@@ -139,15 +139,15 @@ public class GradeDAO {
 		return list;
 	}
 	
-	public GradeBean findBySeq(int seq) {
-		GradeBean temp = null;
+	public GradeVO findBySeq(int seq) {
+		GradeVO temp = null;
 		String sql = "select * from grade where seq = ? ";
 		try {
 			pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, seq);
 			rs = pstmt.executeQuery();
 				if (rs.next()) {
-					GradeBean bean = new GradeBean();
+					GradeVO bean = new GradeVO();
 					bean.setSeq(String.valueOf(rs.getInt("SEQ")));
 					bean.setId(rs.getString("ID"));
 					bean.setExamDate(rs.getString("EXAM_DATE"));
@@ -165,15 +165,15 @@ public class GradeDAO {
 		return temp;
 	}
 	
-	public List<GradeBean> findByID(String id) {
-		List<GradeBean> list = new ArrayList<GradeBean>();
+	public List<GradeVO> findByID(String id) {
+		List<GradeVO> list = new ArrayList<GradeVO>();
 		String sql = "select * from grade where id = ?";
 		try {
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, id);
 			rs = pstmt.executeQuery();
 			while(rs.next()){
-				GradeBean bean = new GradeBean();
+				GradeVO bean = new GradeVO();
 				bean.setSeq(String.valueOf(rs.getInt("SEQ")));
 				bean.setId(rs.getString("ID"));
 				bean.setExamDate(rs.getString("EXAM_DATE"));

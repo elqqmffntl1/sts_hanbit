@@ -1,6 +1,6 @@
 package com.hanbit.web.bank;
 
-public class AccountMemberBean {
+public class AccountMemberVO {
 	private String id,pw,name,regDate,gender,ssn,birth; 
 	private int accountNo,money;
 	public String getId() {

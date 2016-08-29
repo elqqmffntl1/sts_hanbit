@@ -6,13 +6,16 @@ import java.text.SimpleDateFormat;
 
 import javax.swing.JOptionPane;
 
+import org.springframework.stereotype.Component;
+
 /**
  * @date   :2016. 6. 16. 
  * @author :한상호
  * @file   :Student.java
  * @story  :
 */
-public class MemberBean implements Serializable{
+
+public class MemberVO implements Serializable{
 	private static final long serialVersionUID = 1L;
 	private String id,pw,name,regDate,gender,ssn,profileImg,email,phone; 
 	private int birth;
@@ -42,9 +45,9 @@ public class MemberBean implements Serializable{
 		this.email = email;
 	}
 
-	public MemberBean() {}
+	public MemberVO() {}
 
-	public MemberBean(String id,String pw,String name, String gender, String email, String ssn, String profileImg) {
+	public MemberVO(String id,String pw,String name, String gender, String email, String ssn, String profileImg) {
 		this.id = id;
 		this.pw = pw;
 		this.name = name;

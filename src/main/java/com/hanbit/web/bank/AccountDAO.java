@@ -27,7 +27,7 @@ public class AccountDAO {
 	public static AccountDAO getInstance() {
 		return instance;
 	}
-	public int insertAccount(AccountBean acc) {
+	public int insertAccount(AccountVO acc) {
 		int result = 0; 
 		String sql = "insert into account (id, account_no, money) "
 				+ "values (?,?,?)";
@@ -61,7 +61,7 @@ public class AccountDAO {
 		
 		return money;
 	}
-	public void deposit(AccountBean acc) {
+	public void deposit(AccountVO acc) {
 		String sql = "update account set money = ?"
 				+ "where account_no = ?";
 		try {
@@ -74,7 +74,7 @@ public class AccountDAO {
 			e.printStackTrace();
 		}
 	}
-	public void withdraw(AccountBean acc) {
+	public void withdraw(AccountVO acc) {
 		this.deposit(acc);
 	}
 	public int delete(String delete) {
@@ -90,7 +90,7 @@ public class AccountDAO {
 		return result;
 	}
 	public List<?> selectAll() {
-		List<AccountMemberBean> list = new ArrayList<AccountMemberBean>();
+		List<AccountMemberVO> list = new ArrayList<AccountMemberVO>();
 		String sql = "select " 
 				+ "account_no as acc,"
 				+ "id as id,"
@@ -103,7 +103,7 @@ public class AccountDAO {
 			pstmt = con.prepareStatement(sql);
 		    rs = pstmt.executeQuery();
 		    while (rs.next()) {
-		    	AccountMemberBean acc = new AccountMemberBean();
+		    	AccountMemberVO acc = new AccountMemberVO();
 		    	acc.setAccountNo(rs.getInt("ACC"));
 		    	acc.setId(rs.getString("ID"));
 		    	acc.setName(rs.getString("NAME"));
@@ -132,13 +132,13 @@ public class AccountDAO {
 		return result;
 	}
 	public Map<?, ?> selectMap() {
-		 Map<String,AccountMemberBean> map = new HashMap<String,AccountMemberBean>();
+		 Map<String,AccountMemberVO> map = new HashMap<String,AccountMemberVO>();
 		 String sql = "select * from account_member";
 		 try {
 			pstmt = con.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
-				AccountMemberBean am = new AccountMemberBean();
+				AccountMemberVO am = new AccountMemberVO();
 				am.setAccountNo(rs.getInt("ACCOUNT_NO"));
 				am.setId(rs.getString("ID"));
 				am.setMoney(rs.getInt("MONEY"));
