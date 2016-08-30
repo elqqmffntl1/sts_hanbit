@@ -18,13 +18,17 @@ public class MemberController {
 	@RequestMapping("/search")
 	public String find(@RequestParam("keyword") String keyword,
 			@RequestParam("search_option") String option,
+			@RequestParam("context") String context,
 			Model model){
 		logger.info("MemberController ! findById : {}","??");
 		System.out.println("검색어:"+keyword);
 		System.out.println("옵션:"+option);
+		System.out.println("context :"+context);
 		MemberVO member = (MemberVO) service.findById(keyword);
 		System.out.println("NAME : "+ member.getName());
+		System.out.println("profileImg : "+ member.getProfileImg());
 		model.addAttribute("member", member);
+		model.addAttribute("img", context+"/resources/img");
 		return "admin:member/detail.tiles";
 				
 	}

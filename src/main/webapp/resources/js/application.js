@@ -157,6 +157,7 @@ var admin = (function(){
 		$('#admin_nav #account_mgmt #count').click(function(){controller.move('account','count');});
 		$('#admin_nav #account_mgmt #delete').click(function(){controller.move('account','delete');});
 		$('#admin_nav #account_mgmt #find').click(function(){controller.move('account','find');});
+		
 	};
 	return {
 		setPass : setPass,
@@ -218,9 +219,7 @@ var member = (function() {
 		$('#member_regist #ck_subject').addClass('checkbox');
 		$('#member_regist #ck_subject > label').addClass('checkbox-inline');
 		$('#member_find_form').attr('action',sessionStorage.getItem('context')+'/member/search');
-		$('#member_find_form input[type="submit"]').click(function(){
-			$('#member_find_form').submit();
-			});
+		$('#member_find_form input[type="hidden"]').attr('name','context').attr('value',app.context());
 	};
 	var onCreate = function(){
 		setContentView();
@@ -233,6 +232,9 @@ var member = (function() {
 		$('#list').click(function() {controller.move('member','list');});
 		$('#find_by').click(function() {controller.move('member','find_by');});
 		$('#count').click(function() {controller.move('member','count');});
+		$('#member_find_form input[type="submit"]').click(function(){
+			$('#member_find_form').submit();
+			});
 	};
 	return {
 		setSsn : setSsn,

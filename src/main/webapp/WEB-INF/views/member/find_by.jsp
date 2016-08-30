@@ -10,6 +10,7 @@
 		</select>
      	<input type="text" name="keyword" class="form-control" placeholder="Search"/>
      	<input type="submit" class="btn btn-primary" value="SEARCH"/>
+        <input type="hidden"/>
 	  	</div>
 	  	</div>
 	</form>	

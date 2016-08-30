@@ -28,7 +28,7 @@
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
    
    <context:annotation-config />
-  <mvc:annotation-driven />
+   <mvc:annotation-driven />
    <mvc:resources mapping="/resources/**" location="/resources/" />
    <context:component-scan base-package="com.hanbit.web" />
 
