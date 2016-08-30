@@ -1,12 +1,13 @@
 package com.hanbit.web.grade;
 
-import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.stereotype.Service;
+@Service
 public class GradeServiceImpl implements GradeService{
 
-	GradeDAO dao = GradeDAO.getInstance();
+	GradeDAOImpl dao = GradeDAOImpl.getInstance();
 	
 	private static GradeServiceImpl instance = new GradeServiceImpl();
 	private GradeServiceImpl() {}

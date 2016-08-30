@@ -4,9 +4,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.stereotype.Service;
+@Service
 public class AccountServiceImpl implements AccountService {
 	
-	AccountDAO dao = AccountDAO.getInstance();
+	AccountDAOImpl dao = AccountDAOImpl.getInstance();
 	private Map<?,?> map ; 
 	private static AccountServiceImpl instance = new AccountServiceImpl();
 	

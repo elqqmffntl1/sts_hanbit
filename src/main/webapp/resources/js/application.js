@@ -217,6 +217,10 @@ var member = (function() {
 		$('#member_regist #rd_major > label:gt(2)').addClass('radio-inline');
 		$('#member_regist #ck_subject').addClass('checkbox');
 		$('#member_regist #ck_subject > label').addClass('checkbox-inline');
+		$('#member_find_form').attr('action',sessionStorage.getItem('context')+'/member/search');
+		$('#member_find_form input[type="submit"]').click(function(){
+			$('#member_find_form').submit();
+			});
 	};
 	var onCreate = function(){
 		setContentView();
