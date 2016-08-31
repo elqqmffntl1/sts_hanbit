@@ -1,6 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<jsp:include page="../global/header.jsp"/>
-<jsp:include page="../global/navi.jsp"/>
 <div id="container" style='width: 100%'>
 <h1 style='margin: 0 auto; width: 250px'>Creator 학습장</h1>
 <section class ="formbox">
@@ -25,8 +23,6 @@
 		<button id="bt_withdraw">출금</button>
 </section>
 </div>
-<jsp:include page="../global/footer.jsp"/>
-<jsp:include page="../global/end.jsp"/>
 <script src="${js}/douglas.js"></script>
 <script type="text/javascript">
 	account.init();

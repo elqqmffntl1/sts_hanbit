@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<nav class="navbar navbar-inverse" style='height: 50px'>
+<nav id="public_header" class="navbar navbar-inverse" style='height: 50px; '>
 	<div class="container-fluid">
 		<!-- Brand and toggle get grouped for better mobile display -->
 		<div class="navbar-header" ><a href="#" id="title"><img id="header_brand"></a> <font color="white">    석양이 진다</font>

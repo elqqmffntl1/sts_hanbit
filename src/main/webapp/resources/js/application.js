@@ -16,7 +16,7 @@ var app = (function(){
 	var css = function(){return sessionStorage.getItem('css');};
 	var img = function(){return sessionStorage.getItem('img');};
 	var setContentView = function(){
-		$('#header_brand').attr('src' ,app.img()+'/highnoon.png').css('width','50px').css('height','50px');
+		$('#header_brand').attr('src' ,app.img()+'/default/highnoon.png').css('width','50px').css('height','50px');
 		$('#footer').addClass('bottom').addClass('footer');
 		$('#global_content').addClass('box');
 		$('#global_content a').addClass('cursor');
@@ -31,7 +31,7 @@ var app = (function(){
 		$('#a_member').click(function(){controller.move('member','main');});
 		$('#a_grade').click(function(){controller.move('grade','main');});
 		$('#a_account').click(function(){controller.move('account','main');});
-		$('#a_school').click(function(){controller.move('global','school_info');});
+		$('#a_school').click(function(){controller.move('public','school_info');});
 	};
 	return {
 		init : init,
@@ -232,9 +232,7 @@ var member = (function() {
 		$('#list').click(function() {controller.move('member','list');});
 		$('#find_by').click(function() {controller.move('member','find_by');});
 		$('#count').click(function() {controller.move('member','count');});
-		$('#member_find_form input[type="submit"]').click(function(){
-			$('#member_find_form').submit();
-			});
+		$('#member_find_form input[type="submit"]').click(function(){$('#member_find_form').submit();});
 	};
 	return {
 		setSsn : setSsn,

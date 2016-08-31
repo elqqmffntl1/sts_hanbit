@@ -1,5 +1,8 @@
 package com.hanbit.web.grade;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class GradeMemberVO {
 	private String id, grade,seq,examDate,type,pw,name,regDate,gender,ssn,score;
 	private int java, sql, html, js, birth;

@@ -1,5 +1,8 @@
 package com.hanbit.web.bank;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class AccountMemberVO {
 	private String id,pw,name,regDate,gender,ssn,birth; 
 	private int accountNo,money;
