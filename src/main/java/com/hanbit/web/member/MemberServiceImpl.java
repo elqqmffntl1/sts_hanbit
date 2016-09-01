@@ -103,7 +103,7 @@ public class MemberServiceImpl implements MemberService {
 		// 2.로그인
 			if (dao.login(member)) {
 				member = findById(member.getId());
-				System.out.println("서비스 로그인 하는 중..ID"+member.getId());
+				System.out.println("서비스 로그인 하는 중..ID? :"+member.getId());
 				//accService.map();
 				sb = subjDao.findById(member.getId());
 				sm.setEmail(member.getEmail());
@@ -122,7 +122,7 @@ public class MemberServiceImpl implements MemberService {
 			} else {
 				sm.setId("fail");
 			}
-		System.out.println("서비스로그인결과?"+sm.getId());
+		System.out.println("서비스로그인결과? :"+sm.getId());
 		return sm;
 	}
 

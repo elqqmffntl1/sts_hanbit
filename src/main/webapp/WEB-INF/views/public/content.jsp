@@ -5,3 +5,6 @@
 	<a id="global_content_a_login"></a><br />
 	<a id="global_content_a_admin"></a>
 </section>
+<script type="text/javascript">
+$('#global_content').attr('src' ,app.img()+'/default/highnoon.png').css('width','50%').css('height','50%');
+</script>

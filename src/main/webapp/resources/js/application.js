@@ -46,7 +46,7 @@ var app = (function(){
 var user = (function(){
 	var init = function(){onCreate();};
 	var setContentView = function(){
-		$('#account_content_img_home').attr('src' ,app.img()+'/home.jpg').css('width','30px');
+		$('#account_content_img_home').attr('src' ,app.img()+'/default/home.jpg').css('width','30px');
 		$('#account_content_a_home').attr('alt','home').click(function() {controller.home();});
 		$('#account_content').css('font-size','20px').addClass('box');
 		$('#account_content > article').css('width','300px').addClass('center').addClass('text_left');
@@ -142,9 +142,9 @@ var admin = (function(){
 	var setPass = function(pass){this._pass=pass;};
 	var init = function(){onCreate();};
 	var setContentView = function(){
-		$('#member2_img').attr('src' ,app.img()+'/member2.jpg');
-		$('#grade_img').attr('src' ,app.img()+'/grade.jpg').css('height','180px');
-		$('#account_img').attr('src' ,app.img()+'/account.jpg').css('height','180px');
+		$('#member2_img').attr('src' ,app.img()+'/default/member2.jpg');
+		$('#grade_img').attr('src' ,app.img()+'/default/grade.jpg').css('height','180px');
+		$('#account_img').attr('src' ,app.img()+'/default/account.jpg').css('height','180px');
 		$('#admin_content h3').addClass('text_center');
 	};
 	var onCreate = function(){
@@ -191,7 +191,7 @@ var member = (function() {
 	var getSsn = function(ssn){return this._ssn;};
 	var init = function(){onCreate();};
 	var setContentView = function(){
-		$('#member_content_img_home').attr('src' ,app.img()+'/home.jpg').css('width','30px');
+		$('#member_content_img_home').attr('src' ,app.img()+'/default/home.jpg').css('width','30px');
 		$('#member_content_a_home').attr('alt','home').click(function() {controller.home();});
 		$('#member_content').css('font-size','20px').addClass('box');
 		$('#member_content > article').css('width','300px').addClass('center').addClass('text_left');
@@ -333,7 +333,7 @@ var kaup = (function() {
 var grade = (function() {
 	var init = function(){onCreate();};
 	var setContentView = function(){
-		$('#grade_content_img_home').attr('src' ,app.img()+'/home.jpg').css('width','30px');
+		$('#grade_content_img_home').attr('src' ,app.img()+'/default/home.jpg').css('width','30px');
 		$('#grade_content_a_home').attr('alt','home').click(function() {controller.home();});
 		$('#grade_content').css('font-size','20px').addClass('box');
 		$('#grade_content > article').css('width','300px').addClass('center').addClass('text_left');

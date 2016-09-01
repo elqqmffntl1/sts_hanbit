@@ -5,13 +5,19 @@
 <link rel="icon" type="image/png" href="${img}/favicons/favicon-16x16.png" sizes="16x16">
 <link rel="manifest" href="${img}/favicons/manifest.json">
 <link rel="shortcut icon" href="${img}/favicons/favicon.ico">
+<!-- Normalize -->
 <link rel="stylesheet" type="text/css" href="${css}/normalize.css">
+<!-- Owl -->
 <link rel="stylesheet" type="text/css" href="${css}/owl.css">
+<!-- Animate.css -->
 <link rel="stylesheet" type="text/css" href="${css}/animate.css">
+<!-- Font Awesome -->
 <link rel="stylesheet" type="text/css" href="${css}/fonts/font-awesome.min.css">
+<!-- Elegant Icons -->
 <link rel="stylesheet" type="text/css" href="${css}/fonts/et-icons.css">
+<!-- Main style -->
 <link rel="stylesheet" type="text/css" href="${css}/cardio.css">
-	<section id="user_content" class="box section-padded">
+	<section id="services" class="box section-padded">
 		<div>
 			<div class="row text-center title">
 				<h2>Services</h2>
@@ -19,7 +25,7 @@
 			</div>
 			<div class="row services">
 				<div class="col-md-4">
-					<div id="kaup" class="service">
+					<div class="service">
 						<div class="icon-holder">
 							<img src="${img}/icons/heart-blue.png" alt="" class="icon">
 						</div>
@@ -28,7 +34,7 @@
 					</div>
 				</div>
 				<div class="col-md-4">
-					<div id="rock_sissor_paper" class="service">
+					<div class="service">
 						<div class="icon-holder">
 							<img src="${img}/icons/guru-blue.png" alt="" class="icon">
 						</div>
@@ -37,7 +43,7 @@
 					</div>
 				</div>
 				<div class="col-md-4">
-					<div id="lotto" class="service">
+					<div class="service">
 						<div class="icon-holder">
 							<img src="${img}/icons/weight-blue.png" alt="" class="icon">
 						</div>
@@ -112,10 +118,3 @@
 <script src="${js}/typewriter.js"></script>
 <script src="${js}/jquery.onepagenav.js"></script>
 <script src="${js}/main.js"></script>
-<script type="text/javascript">
-$(function() {
-	$('#user_content #kaup').addClass('cursor').click(function() {controller.move('member','kaup');});
-	$('#user_content #rock_sissor_paper').addClass('cursor').click(function() {controller.move('member','rock_sissor_paper');});
-	$('#user_content #lotto').addClass('cursor').click(function() {controller.move('member','lotto');});
-});
-</script>
