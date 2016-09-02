@@ -13,8 +13,5 @@
 	    	<li><a id="count"></a></li>
 	    </ol>
 	    </article>
-	    <a id="account_content_a_home">
-	    	<img id="account_content_img_home"/>
-	    </a>
     </section>
 

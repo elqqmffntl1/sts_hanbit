@@ -3,7 +3,7 @@
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-    <a href="#" id="title"><img id="header_brand"></a>
+    <a id="go_user_home"><img id="header_brand"></a>
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
@@ -12,24 +12,22 @@
       </button>
       <a class="navbar-brand" href="#"></a>
     </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">나의 성적 <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">성적 목록</a></li>
-            <li><a href="#">성적 조회</a></li>
+          <ul id="grade" class="dropdown-menu">
+            <li><a>최근 성적표 보기</a></li>
+            <li><a>지난 성적표 조회</a></li>
           </ul>
-        </li>
+          </li>
        <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">나의 계좌 <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">계좌 정보</a></li>
-            <li><a href="#">계좌 생성</a></li>
-            <li><a href="#">계좌 해지</a></li>
-            <li><a href="#">입출금</a></li>
+          <ul id="account" class="dropdown-menu">
+            <li><a>계좌 정보</a></li>
+            <li><a>계좌 생성</a></li>
+            <li><a>입출금</a></li>
+            <li><a>계좌 해지</a></li>
           </ul>
         </li>  
       </ul>
@@ -45,17 +43,13 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">비밀번호 변경</a></li>
+            <li><a id="a_mypage">마이페이지</a></li>
+            <li><a id="a_detail">내 정보 보기</a></li>
+            <li><a id="a_update">내 정보 수정</a></li>
+            <li><a id="a_delete">회원탈퇴</a></li>
           </ul>
         </li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav> 
-<script>
-$(function() {
-	$('#user_header').css('height','50px');
-	$('#user_header #logout').addClass('cursor');
-	$('#user_header #logout').click(function() {controller.home();});
-})
-</script>

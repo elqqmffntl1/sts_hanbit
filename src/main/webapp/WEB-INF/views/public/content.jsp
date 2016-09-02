@@ -1,10 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<div class="box" style="width:1000px;padding-top:0">
+<jsp:include page="slider.jsp" />
 <section id="global_content">
-	<h2><small>서비스를 이용하시려면</small> 회원가입<small>을 하셔야 합니다</small></h2>
 	<a id="global_content_a_regist"></a><br />
 	<a id="global_content_a_login"></a><br />
 	<a id="global_content_a_admin"></a>
 </section>
-<script type="text/javascript">
-$('#global_content').attr('src' ,app.img()+'/default/highnoon.png').css('width','50%').css('height','50%');
-</script>
+</div>

@@ -23,7 +23,3 @@
 		<button id="bt_withdraw">출금</button>
 </section>
 </div>
-<script src="${js}/douglas.js"></script>
-<script type="text/javascript">
-	account.init();
-</script>

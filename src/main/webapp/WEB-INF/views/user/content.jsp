@@ -11,7 +11,7 @@
 <link rel="stylesheet" type="text/css" href="${css}/fonts/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="${css}/fonts/et-icons.css">
 <link rel="stylesheet" type="text/css" href="${css}/cardio.css">
-	<section id="user_content" class="box section-padded">
+	<section id="user_content_service" class="box section-padded">
 		<div>
 			<div class="row text-center title">
 				<h2>Services</h2>
@@ -49,7 +49,7 @@
 		</div>
 		<div class="cut cut-bottom"></div>
 	</section>
-	<section id="team" class="section gray-bg">
+	<section id="user_content_subject" class="section gray-bg">
 		<div class="container">
 			<div class="row title text-center">
 				<h2 class="margin-top">MAJOR SUBJECT</h2>
@@ -57,10 +57,10 @@
 			</div>
 			<div class="row">
 				<div class="col-md-4">
-					<div class="team text-center">
+					<div id="major_subject_1" class="team text-center">
 						<div class="cover" style="background:url('${img}/team/java2.jpg'); background-size:cover;">
 							<div class="overlay text-center">
-								<h3 class="white">$69.00</h3>
+								<h3 class="white">JAVA</h3>
 								<h5 class="light light-white">1 - 5 sessions / month</h5>
 							</div>
 						</div>
@@ -69,14 +69,15 @@
 							<h4>JAVA</h4>
 							<h5 class="muted regular">Server Program Language</h5>
 						</div>
-						<button data-toggle="modal" data-target="#modal1" class="btn btn-blue-fill">Sign Up Now</button>
+						<input type="hidden" name="major_subject_1" value="java"/>
+						<input type="button" data-toggle="modal" data-target="#modal1" class="btn btn-blue-fill" value="과목 정보 보기"/>
 					</div>
 				</div>
 				<div class="col-md-4">
-					<div class="team text-center">
+					<div  id="major_subject_2" class="team text-center">
 						<div class="cover" style="background:url('${img}/team/javascript2.jpg'); background-size:cover;">
 							<div class="overlay text-center">
-								<h3 class="white">$69.00</h3>
+								<h3 class="white">JAVASCRIPT</h3>
 								<h5 class="light light-white">1 - 5 sessions / month</h5>
 							</div>
 						</div>
@@ -85,14 +86,15 @@
 							<h4>JAVASCRIPT</h4>
 							<h5 class="muted regular">Poketmon Go Language</h5>
 						</div>
-						<a href="#" data-toggle="modal" data-target="#modal1" class="btn btn-blue-fill ripple">Sign Up Now</a>
+						<input type="hidden" name="major_subject_2" value="javascript"/>
+						<input type="button" data-toggle="modal" data-target="#modal1" class="btn btn-blue-fill" value="과목 정보 보기"/>
 					</div>
 				</div>
 				<div class="col-md-4">
-					<div class="team text-center">
+					<div id="major_subject_3" class="team text-center" >
 						<div class="cover" style="background:url('${img}/team/sql2.jpg'); background-size:cover;">
 							<div class="overlay text-center">
-								<h3 class="white">$69.00</h3>
+								<h3 class="white">SQL</h3>
 								<h5 class="light light-white">1 - 5 sessions / month</h5>
 							</div>
 						</div>
@@ -101,7 +103,8 @@
 							<h4>SQL</h4>
 							<h5 class="muted regular">Database Management Language</h5>
 						</div>
-						<a href="#" data-toggle="modal" data-target="#modal1" class="btn btn-blue-fill ripple">Sign Up Now</a>
+						<input type="hidden" name="major_subject_3" value="sql"/>
+						<input type="button" data-toggle="modal" data-target="#modal1" class="btn btn-blue-fill" value="과목 정보 보기"/>
 					</div>
 				</div>
 			</div>
@@ -112,10 +115,3 @@
 <script src="${js}/typewriter.js"></script>
 <script src="${js}/jquery.onepagenav.js"></script>
 <script src="${js}/main.js"></script>
-<script type="text/javascript">
-$(function() {
-	$('#user_content #kaup').addClass('cursor').click(function() {controller.move('member','kaup');});
-	$('#user_content #rock_sissor_paper').addClass('cursor').click(function() {controller.move('member','rock_sissor_paper');});
-	$('#user_content #lotto').addClass('cursor').click(function() {controller.move('member','lotto');});
-});
-</script>

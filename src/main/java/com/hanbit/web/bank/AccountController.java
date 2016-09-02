@@ -12,47 +12,57 @@ public class AccountController {
 	private static final Logger logger = LoggerFactory.getLogger(AccountController.class);
 	@RequestMapping("/main")
 	public String moveMain(){
-		logger.info("AccountController ! moveMain() ");
+		logger.info("GO TO {}","main");
 		return "admin:account/content.tiles";
 	}
 	@RequestMapping("/count")
 	public String moveCount(){
-		logger.info("AccountController ! count() ");
+		logger.info("GO TO {}","count");
 		return "admin:account/count.tiles";
 	}
 	@RequestMapping("/delete")
 	public String moveDelete(){
-		logger.info("AccountController ! delete() ");
-		return "admin:account/delete.tiles";
+		logger.info("GO TO {}","delete");
+		return "user:account/open.tiles";
+	}
+	@RequestMapping("/transaction")
+	public String moveTransaction(){
+		logger.info("GO TO {}","transaction");
+		return "user:account/transaction.tiles";
+	}
+	@RequestMapping("/detail")
+	public String moveDetail(){
+		logger.info("GO TO {}","detail");
+		return "user:account/detail.tiles";
 	}
 	@RequestMapping("/deposit")
 	public String moveDeposit(){
-		logger.info("AccountController ! deposit() ");
+		logger.info("GO TO {}","deposit");
 		return "user:account/deposit.tiles";
 	}
 	@RequestMapping("/list")
 	public String moveList(){
-		logger.info("AccountController ! list() ");
+		logger.info("GO TO {}","list");
 		return "admin:account/list.tiles";
 	}
 	@RequestMapping("/open")
 	public String moveOpen(){
-		logger.info("AccountController ! open() ");
-		return "admin:account/open.tiles";
+		logger.info("GO TO {}","open");
+		return "user:account/open.tiles";
 	}
 	@RequestMapping("/find")
 	public String moveFind(){
-		logger.info("AccountController ! find() ");
+		logger.info("GO TO {}","find");
 		return "admin:account/find.tiles";
 	}
 	@RequestMapping("/update")
 	public String moveUpdate(){
-		logger.info("AccountController ! update() ");
+		logger.info("GO TO {}","update");
 		return "user:account/update.tiles";
 	}
 	@RequestMapping("/withdraw")
 	public String moveWithdraw(){
-		logger.info("AccountController ! withdraw() ");
+		logger.info("GO TO {}","withdraw");
 		return "user:account/withdraw.tiles";
 	}
 

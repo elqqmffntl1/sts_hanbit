@@ -75,10 +75,16 @@ public class MemberController {
 		logger.info("GO TO {}","logout");
 		return "user:member/logout.tiles";
 	} 
+	@RequestMapping("/a_detail")
+	public String moveDetail(@RequestParam("key") String key) {
+		logger.info("GO TO {}","a_detail");
+		logger.info("KEY IS {}",key);
+		return "admin:member/a_detail.tiles";
+	} 
 	@RequestMapping("/detail")
 	public String moveDetail() {
 		logger.info("GO TO {}","detail");
-		return "admin:member/detail.tiles";
+		return "user:member/detail.tiles";
 	} 
 	@RequestMapping("/update")
 	public String moveUpdate() {
@@ -120,4 +126,9 @@ public class MemberController {
 		logger.info("GO TO {}","lotto");
 		return "user:user/lotto.tiles";
 	} 
+	@RequestMapping("/content")
+	public String moveContent() {
+		logger.info("GO TO {}","content");
+		return "user:user/content.tiles";
+	}
 }

@@ -1,4 +1,3 @@
-// var application = (function(){})();  IIFE 패턴
 var app = (function(){
 	var init = function(context) {
 		onCreate();
@@ -21,17 +20,24 @@ var app = (function(){
 		$('#global_content').addClass('box');
 		$('#global_content a').addClass('cursor');
 		$('#global_content h2');
-		$('#global_content_a_regist').text('SIGN UP').click(function(){controller.move('member','regist');});
-		$('#global_content_a_login').text('LOG IN').click(function() {controller.move('member','login');});
-		$('#global_content_a_admin').text('ADMIN MODE').click(function() {admin.check();});
 	};
 	var onCreate = function(){
 		setContentView();
-		$('#title').click(function(){controller.home();});
+		$('#global_content_a_regist').text('SIGN UP').click(function(){controller.move('member','regist');});
+		$('#global_content_a_login').text('LOG IN').click(function() {controller.move('member','login');});
+		$('#global_content_a_admin').text('ADMIN MODE').click(function() {admin.check();});
 		$('#a_member').click(function(){controller.move('member','main');});
 		$('#a_grade').click(function(){controller.move('grade','main');});
 		$('#a_account').click(function(){controller.move('account','main');});
 		$('#a_school').click(function(){controller.move('public','school_info');});
+		$('#test').click(function(){controller.move('public','slider');});
+		$('#free_board_table .name').click(function(){controller.moveWithKey('member','a_detail','reper')});
+		$('#free_board_table .regist').click(function(){controller.moveWithKey('grade','regist','reper')});
+		$('#free_board_table .update').click(function(){controller.moveWithKey('grade','update','reper')});
+		$('#go_public_home').click(function() {controller.home()});
+		$('#school_info').click(function(){controller.move('public','school_info');})
+		$('#contact').click(function(){controller.move('public','contact');})
+		$('#free_board').click(function(){controller.move('public','free_board');})
 	};
 	return {
 		init : init,
@@ -46,8 +52,8 @@ var app = (function(){
 var user = (function(){
 	var init = function(){onCreate();};
 	var setContentView = function(){
+		$('#user_header').css('height','50px');
 		$('#account_content_img_home').attr('src' ,app.img()+'/default/home.jpg').css('width','30px');
-		$('#account_content_a_home').attr('alt','home').click(function() {controller.home();});
 		$('#account_content').css('font-size','20px').addClass('box');
 		$('#account_content > article').css('width','300px').addClass('center').addClass('text_left');
 		$('#account_content a').css('font-size','15px').addClass('cursor');
@@ -64,18 +70,26 @@ var user = (function(){
 	};
 	var onCreate = function(){
 		setContentView();
-		$('#bt_bom').click(function(){controller.move('','bom');});
-		$('#bt_dom').click(function(){controller.move('','dom');});
-		$('#bt_kaup').click(function(){controller.move('','kaup');});
-		$('#bt_account').click(function(){controller.move('','account');});
-		$('#a_count').click(function() {controller.move('account','count');});
-		$('#a_delete').click(function() {controller.move('account','delete');});
-		$('#a_deposit').click(function() {controller.move('account','deposit');});
-		$('#a_list').click(function() {controller.move('account','list');});
-		$('#a_regist').click(function() {controller.move('account','regist');});
-		$('#a_search').click(function() {controller.move('account','search');});
-		$('#a_update').click(function() {controller.move('account','update');});
-		$('#a_withdraw').click(function() {controller.move('account','withdraw');});
+		$('#account_content_a_home').attr('alt','home').click(function() {controller.home();});
+		$('#user_content #kaup').addClass('cursor').click(function() {controller.move('member','kaup');});
+		$('#user_content #rock_sissor_paper').addClass('cursor').click(function() {controller.move('member','rock_sissor_paper');});
+		$('#user_content #lotto').addClass('cursor').click(function() {controller.move('member','lotto');});
+		var key = $('#user_content_subject #major_subject_1 input[type="hidden"]').val();
+		$('#user_content_subject #major_subject_1 input[type="button"]').click(function(){controller.moveWithKey('subject','detail',key)});
+		$('#user_content_subject #major_subject_2 input[type="button"]').click(function(){controller.moveWithKey('subject','detail',key)});
+		$('#user_content_subject #major_subject_3 input[type="button"]').click(function(){controller.moveWithKey('subject','detail',key)});
+		$('#go_user_home').click(function() {controller.move('member','content');});
+		$('#user_header #a_mypage').click(function() {controller.move('member','content');});
+		$('#user_header #a_detail').click(function() {controller.move('member','detail');});
+		$('#user_header #a_update').click(function() {controller.move('member','update');});
+		$('#user_header #a_delete').click(function() {controller.move('member','delete');});
+		$('#user_header #logout').addClass('cursor').click(function() {controller.home();});
+		$("#user_header #account li:eq(0) a").click(function(){controller.move('account','detail');});
+		$("#user_header #account li:eq(1) a").click(function(){controller.move('account','open');});
+		$("#user_header #account li:eq(2) a").click(function(){controller.move('account','transaction');});
+		$("#user_header #account li:eq(3) a").click(function(){controller.move('account','delete');});
+		$("#user_header #grade li:eq(0) a").click(function(){controller.move('grade','detail');});
+		$("#user_header #grade li:eq(1) a").click(function(){controller.move('grade','find');});
 	};
 	return {
 		init : init
@@ -91,6 +105,9 @@ var account = (function(){
 	var setContentView = function(){};
 	var onCreate = function(){
 		setContentView();
+		$('#member_list_table .name').click(function(){controller.moveWithKey('member','a_detail','reper')});
+		$('#member_list_table .regist').click(function(){controller.moveWithKey('account','regist','reper')});
+		$('#member_list_table .update').click(function(){controller.moveWithKey('account','update','reper')});
 /*		$('#bt_spec_show').click(member.spec());
 		$('#bt_make_account').click(this.spec());
 		$('#bt_deposit').click(this.deposit());
@@ -142,6 +159,10 @@ var admin = (function(){
 	var setPass = function(pass){this._pass=pass;};
 	var init = function(){onCreate();};
 	var setContentView = function(){
+		$('#admin_nav').css('height','50px');
+		$('#admin_header').css('height','50px');
+		$('.navbar-header').css('height','50px');
+		$('#admin_header #exit').addClass('cursor');
 		$('#member2_img').attr('src' ,app.img()+'/default/member2.jpg');
 		$('#grade_img').attr('src' ,app.img()+'/default/grade.jpg').css('height','180px');
 		$('#account_img').attr('src' ,app.img()+'/default/account.jpg').css('height','180px');
@@ -149,6 +170,13 @@ var admin = (function(){
 	};
 	var onCreate = function(){
 		setContentView();
+		$('#g_regist').click(function() {alert('등록하시려면 회원리스트로 이동해 주세요');controller.move('member','list');});
+		$('#g_update').click(function() {alert('수정하시려면 회원리스트로 이동해 주세요');controller.move('member','list');});
+		$('#account_mgmt list').click(function() {controller.move('account','list');});
+		$('#account_mgmt find').click(function() {controller.move('account','find');});
+		$('#account_mgmt count').click(function() {controller.move('account','count');});
+		$('#go_admin_home').click(function() {controller.move('admin','main');});
+		$('#admin_header #exit').click(function() {controller.home();});
 		$('#admin_nav #member_mgmt #list').click(function(){controller.move('member','list');});
 		$('#admin_nav #member_mgmt #find').click(function(){controller.move('member','find');});
 		$('#admin_nav #member_mgmt #count').click(function(){controller.move('member','count');});
@@ -157,7 +185,6 @@ var admin = (function(){
 		$('#admin_nav #account_mgmt #count').click(function(){controller.move('account','count');});
 		$('#admin_nav #account_mgmt #delete').click(function(){controller.move('account','delete');});
 		$('#admin_nav #account_mgmt #find').click(function(){controller.move('account','find');});
-		
 	};
 	return {
 		setPass : setPass,
@@ -192,7 +219,6 @@ var member = (function() {
 	var init = function(){onCreate();};
 	var setContentView = function(){
 		$('#member_content_img_home').attr('src' ,app.img()+'/default/home.jpg').css('width','30px');
-		$('#member_content_a_home').attr('alt','home').click(function() {controller.home();});
 		$('#member_content').css('font-size','20px').addClass('box');
 		$('#member_content > article').css('width','300px').addClass('center').addClass('text_left');
 		$('#member_content a').css('font-size','15px').addClass('cursor');
@@ -223,6 +249,13 @@ var member = (function() {
 	};
 	var onCreate = function(){
 		setContentView();
+		$('#member_content_a_home').attr('alt','home').click(function() {controller.home();});
+		$('#member_login_form').attr('method','post').attr('action',app.context()+'/member/login');
+		$('#member_login_form input[type="hidden"]').attr('value',app.context());
+		$('#member_login_form input[type="submit"]').click(function() {$('#member_login_form').submit();});
+		$('#member_list_table .name').click(function(){controller.moveWithKey('member','a_detail','reper')});
+		$('#member_list_table .regist').click(function(){controller.moveWithKey('grade','regist','reper')});
+		$('#member_list_table .update').click(function(){controller.moveWithKey('grade','update','reper')});
 		$('#regist').click(function() {controller.move('member','regist');});
 		$('#login').click(function() {controller.move('member','login');});
 		$('#logout').click(function() {controller.move('member','logout');});
@@ -273,12 +306,10 @@ var member = (function() {
 				ageResult0 = now - 2000-(ageResult1/10000);
 				setAge(geResult0.toString().split(".")[0]);
 				break;
-
 		}	
 			document.querySelector('#result_name').innerHTML = getName();
 			document.querySelector('#result_age').innerHTML = getAge();
 			document.querySelector('#result_gender').innerHTML = getGender();
-			
 		}*/
 	}
 })();
@@ -333,8 +364,25 @@ var kaup = (function() {
 var grade = (function() {
 	var init = function(){onCreate();};
 	var setContentView = function(){
+		$('#grade_update').addClass('box').css('padding-top','0');
+		$('#grade_update #bt_send').addClass('btn').addClass('btn-primary');
+		$('#grade_update #bt_cancel').addClass('btn').addClass('btn-danger');
+		$('#grade_update_form').addClass('form-horizontal');
+		$('#grade_update_form > div').addClass('form-group').addClass('form-group-lg');
+		$('#grade_update_form > div > label').addClass('col-sm-2').addClass('control-label');
+		$('#grade_update_form > div > div').addClass('col-sm-10');
+		$('#grade_update_form > div > div > input').addClass('form-control');
+		$('#grade_update #rd_major > label:gt(2)').addClass('radio-inline');
+		$('#grade_regist').addClass('box').css('padding-top','0');
+		$('#grade_regist #bt_send').addClass('btn').addClass('btn-primary');
+		$('#grade_regist #bt_cancel').addClass('btn').addClass('btn-danger');
+		$('#grade_regist_form').addClass('form-horizontal');
+		$('#grade_regist_form > div').addClass('form-group').addClass('form-group-lg');
+		$('#grade_regist_form > div > label').addClass('col-sm-2').addClass('control-label');
+		$('#grade_regist_form > div > div').addClass('col-sm-10');
+		$('#grade_regist_form > div > div > input').addClass('form-control');
+		$('#grade_regist #rd_major > label:gt(2)').addClass('radio-inline');
 		$('#grade_content_img_home').attr('src' ,app.img()+'/default/home.jpg').css('width','30px');
-		$('#grade_content_a_home').attr('alt','home').click(function() {controller.home();});
 		$('#grade_content').css('font-size','20px').addClass('box');
 		$('#grade_content > article').css('width','300px').addClass('center').addClass('text_left');
 		$('#grade_content a').css('font-size','15px').addClass('cursor');
@@ -356,6 +404,10 @@ var grade = (function() {
 	};
 	var onCreate = function(){
 		setContentView();
+		$('#grade_content_a_home').attr('alt','home').click(function() {controller.home();});
+		$('#member_list_table .name').click(function(){controller.moveWithKey('member','a_detail','reper')});
+		$('#member_list_table .regist').click(function(){controller.moveWithKey('grade','regist','reper')});
+		$('#member_list_table .update').click(function(){controller.moveWithKey('grade','update','reper')});
 		$('#g_count').click(function() {controller.move('grade','count');});
 		$('#g_delete').click(function() {controller.move('grade','delete');});
 		$('#g_list').click(function() {controller.move('grade','list');});
@@ -388,16 +440,26 @@ var session = (function() {
 	};
 })();
 var controller = (function() {
-	var _page,_directory;
+	var _page,_directory,_key;
 	var setPage = function(page){this._page=page;};
 	var setDirectory = function(directory){this._directory=directory;};
 	var getPage = function(){return this._page;};
 	var getDirectory = function(){return this._directory};
+	var setKey = function(key){this._key=key;};
+	var getKey = function(){return this._key;};
 	return {
 		setPage : setPage,
 		getPage : getPage,
+		setKey : setKey,
+		getKey : getKey,
 		setDirectory : setDirectory,
 		getDirectory : getDirectory,
+		moveWithKey : function(directory,page,key){
+			setDirectory(directory);
+			setPage(page);
+			setKey(key);
+			location.href = app.context()+'/'+getDirectory()+'/'+getPage()+'?key='+getKey();
+		},
 		move : function(directory,page){
 			setDirectory(directory);
 			setPage(page);

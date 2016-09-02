@@ -11,8 +11,6 @@
 	    	<li><a id="g_search"></a></li>
 	    </ol>
 	    </article>
-	    <a id="grade_content_a_home">
-	    	<img id="grade_content_img_home"/>
-	    </a>
+
     </section>
 

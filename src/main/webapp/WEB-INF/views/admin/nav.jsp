@@ -17,10 +17,7 @@
     <ul id="grade_mgmt"class="dropdown-menu">
     	    <li><a id="g_regist">등 록</a></li>
 	    	<li><a id="g_update">수 정</a></li>
-	    	<li><a id="g_delete">삭 제</a></li>
 	    	<li><a id="g_list">목 록</a></li>
-	    	<li><a id="g_count">학생수</a></li>
-	    	<li><a id="g_search">검 색</a></li>
     </ul>
    </li>
     <li role="presentation" class="dropdown">

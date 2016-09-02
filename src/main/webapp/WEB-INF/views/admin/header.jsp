@@ -3,7 +3,7 @@
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-   <a href="#" id="title"><img id="header_brand"></a>
+   <a id="go_admin_home"><img id="header_brand"></a>
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
@@ -13,6 +13,7 @@
       <a class="navbar-brand" href="#"></a>
     </div>
       <ul class="nav navbar-nav navbar-right">
+      <li style='margin-top:14px;margin-right:50px;font-weight: bold; color:yellow;'><span aria-hidden="true"></span>Admin</li>
         <li><a id="exit"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>나가기</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> <span class="caret"></span></a>
@@ -23,11 +24,4 @@
       </ul>
     </div>
 </nav> 
-<script>
-$(function() {
-	$('#admin_header').css('height','50px');
-	$('.navbar-header').css('height','50px');
-	$('#admin_header #exit').addClass('cursor');
-	$('#admin_header #exit').click(function() {controller.home();});
-})
-</script>
+
