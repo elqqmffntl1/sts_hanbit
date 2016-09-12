@@ -13,7 +13,7 @@ public class JDBCTest {
 		Connection con = null;
 		Statement stmt = null;
 		ResultSet rs = null;
-		String sql = "select name from member where id = 'reper'", result = "";
+		String sql = "select name from member where mem_id = 'reper'", result = "";
 		List<String> list = new ArrayList<String>();
 		try {
 			Class.forName(Constants.ORACLE_DRIVER);
@@ -27,6 +27,6 @@ public class JDBCTest {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		System.out.println(result);
+		System.out.println("결과 : "+result);
 	}
 }
