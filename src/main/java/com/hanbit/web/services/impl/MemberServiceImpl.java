@@ -119,7 +119,7 @@ public class MemberServiceImpl implements MemberService {
 	public MemberDTO login(MemberDTO member) {
 		logger.info("MemberService login ID = {}",member.getId());
 		MemberMapper mapper = sqlSession.getMapper(MemberMapper.class);
-		MemberDTO mem = this.findById(member.getId());
+		MemberDTO mem = mapper.findById(member.getId());
 		if (member.getPw().equals(member.getPw())) {
 			logger.info("MemberService LOGIN IS ","SUCCESS");
 			return mem;
