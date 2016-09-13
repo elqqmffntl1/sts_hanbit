@@ -1,7 +1,5 @@
 package com.hanbit.web.domains;
 
-
-
 import java.io.Serializable;
 
 import org.springframework.stereotype.Component;
@@ -12,8 +10,8 @@ import lombok.Setter;
 
 @Component
 @Data
-public class GradeDTO implements Serializable{
+public class ExamDTO implements Serializable{
 	private static final long serialVersionUID = 1L;
-	@Getter @Setter	private int greadeSeq,subjSeq,examSeq,score;
-	@Getter @Setter	private String subjName,grade,term,role,id,pw,name,regDate,gender,ssn,profileImg,email,phone;
+	@Getter @Setter	private int examSeq,score,subjSeq;
+	@Getter @Setter	private String term,id;
 }

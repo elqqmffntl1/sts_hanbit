@@ -12,14 +12,8 @@ public class Test {
 		MemberDTO m = MemberServiceImpl.getInstance().findById("hong");
 		return m.getName();
 	}
-	public String test3(){
-		GradeDTO a = GradeServiceImpl.getInstance().findBySeq(1002);
-		return a.getSeq();
-	}
-
 	public static void main(String[] args){
 		Test t = new Test();
 		System.out.println("member test : "+t.test());
-		System.out.println("grade test : "+t.test3());
 	}
 }

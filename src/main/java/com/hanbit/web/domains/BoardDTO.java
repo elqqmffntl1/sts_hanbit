@@ -1,6 +1,5 @@
 package com.hanbit.web.domains;
 
-
 import java.io.Serializable;
 
 import org.springframework.stereotype.Component;
@@ -17,8 +16,8 @@ import lombok.Setter;
 */
 @Component
 @Data
-public class SubjectDTO implements Serializable{
+public class BoardDTO implements Serializable{
 	private static final long serialVersionUID = 1L;
-	@Getter @Setter	private int subjSeq;
-	@Getter @Setter	private String subjName,id;
+	@Getter @Setter	private int artSeq;
+	@Getter @Setter	private String id,pw,name,gender,writeDate,ssn,email,profileImg,role,phone,category,title,regDate,content;
 }
