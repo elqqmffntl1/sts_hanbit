@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.hanbit.web.controllers.MemberController;
+import com.hanbit.web.domains.Command;
 import com.hanbit.web.domains.MemberDTO;
 import com.hanbit.web.domains.SubjectDTO;
 import com.hanbit.web.mappers.MemberMapper;
@@ -27,7 +28,7 @@ public class MemberServiceImpl implements MemberService {
 	public String regist(MemberDTO mem) {
 		MemberMapper mapper = sqlSession.getMapper(MemberMapper.class);
 		String msg = "";
-		MemberDTO temp = this.findById(mem.getId());
+		MemberDTO temp = this.findOne(null);
 		if (temp == null) {
 			System.out.println(mem.getId()+"은(는) 사용 가능한 ID 입니다.");
 			int result = mapper.insert(mem);
@@ -75,9 +76,9 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
-	public MemberDTO findById(String findID) {
+	public MemberDTO findOne(Command command) {
 		MemberMapper mapper = sqlSession.getMapper(MemberMapper.class);
-		return mapper.findById(findID);
+		return mapper.findOne(command);
 	}
 
 	@Override
@@ -119,7 +120,7 @@ public class MemberServiceImpl implements MemberService {
 	public MemberDTO login(MemberDTO member) {
 		logger.info("MemberService login ID = {}",member.getId());
 		MemberMapper mapper = sqlSession.getMapper(MemberMapper.class);
-		MemberDTO mem = mapper.findById(member.getId());
+		MemberDTO mem = mapper.findOne(null);
 		if (member.getPw().equals(member.getPw())) {
 			logger.info("MemberService LOGIN IS ","SUCCESS");
 			return mem;
