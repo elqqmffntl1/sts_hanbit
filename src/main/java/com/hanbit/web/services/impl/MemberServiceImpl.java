@@ -21,9 +21,8 @@ import com.hanbit.web.services.MemberService;
 public class MemberServiceImpl implements MemberService {
 	private static final Logger logger = LoggerFactory.getLogger(MemberController.class);
 	@Autowired private SqlSession sqlSession;
-	@Autowired private MemberDTO member;
-	@Autowired private SubjectDTO sb;
-
+	@Autowired Command command;
+	@Autowired MemberDTO member;
 	@Override
 	public String regist(MemberDTO mem) {
 		MemberMapper mapper = sqlSession.getMapper(MemberMapper.class);
@@ -120,16 +119,26 @@ public class MemberServiceImpl implements MemberService {
 	public MemberDTO login(MemberDTO member) {
 		logger.info("MemberService login ID = {}",member.getId());
 		MemberMapper mapper = sqlSession.getMapper(MemberMapper.class);
-		MemberDTO mem = mapper.findOne(null);
-		if (member.getPw().equals(member.getPw())) {
+		Command command = new Command();
+		command.setKeyword(member.getId());
+		command.setOption("mem_id");
+		MemberDTO mem = mapper.findOne(command);
+		if (mem.getPw().equals(member.getPw())) {
 			logger.info("MemberService LOGIN IS ","SUCCESS");
 			return mem;
+		}else{
+			logger.info("MemberService LOGIN IS ","FAIL");
+			mem.setId("NONE");
+			return mem;
 		}
-		mem.setId("NONE");
-		logger.info("MemberService LOGIN IS ","FAIL");
-		return mem;
 	}
 
+	@Override
+	public int existId(String id) {
+		logger.info("MemberService existId ID = {}",id);
+		MemberMapper mapper = sqlSession.getMapper(MemberMapper.class);
+		return mapper.existId(id);
+	}
 }
 /*
  * String sqlCreate = "create table member(" + "id varchar2(20) primary key," +

@@ -25,6 +25,7 @@ public interface MemberService{
 	public void logout(MemberDTO member);
 	public MemberDTO login(MemberDTO member);
 	public List<?> findBy(String keyword);
+	public int existId(String id);
 	public List<?> list();
 	public int count();
 	public Map<?, ?> map();

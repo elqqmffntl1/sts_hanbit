@@ -53,3 +53,8 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav> 
+<script type="text/javascript">
+$(function() {
+	$('#logout').click(function(){location.href = app.context()+'/member/logout';});
+})
+</script>

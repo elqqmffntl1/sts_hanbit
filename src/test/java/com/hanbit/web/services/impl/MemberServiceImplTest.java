@@ -20,7 +20,7 @@ public class MemberServiceImplTest {
 	@Test
 	public void testLogin() {
 		MemberMapper mapper = sqlSession.getMapper(MemberMapper.class);
-		assertEquals(mapper.findById("reper").getName(),"리 퍼");
+		assertEquals(mapper.findByName("reper"),"리 퍼");
 	}	
 	@Test
 	public void testFindById(){

@@ -8,12 +8,12 @@ import com.hanbit.web.services.impl.GradeServiceImpl;
 import com.hanbit.web.services.impl.MemberServiceImpl;
 
 public class Test {
-	public String test(){
-		MemberDTO m = MemberServiceImpl.getInstance().findById("hong");
+/*	public String test(){
+		MemberDTO m = MemberServiceImpl.getInstance().findOne("hong");
 		return m.getName();
 	}
 	public static void main(String[] args){
 		Test t = new Test();
 		System.out.println("member test : "+t.test());
-	}
+	}*/
 }
